@@ -35,7 +35,7 @@ clMID = cl.profile.mid
 myProfile["displayName"] = clProfile.displayName
 myProfile["statusMessage"] = clProfile.statusMessage
 myProfile["pictureStatus"] = clProfile.pictureStatus
-admin=['ud710f342e9915bf19d1bab0185e58152','uc3785b8c9e23fc5e9eb0ef9311c1f430','clMID］
+admin=['ud710f342e9915bf19d1bab0185e58152','uc3785b8c9e23fc5e9eb0ef9311c1f430'］
 msg_dict = {}
 wait2 = {
     'readPoint':{},
