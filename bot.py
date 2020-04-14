@@ -106,10 +106,10 @@ def updateProfileVideoPicture(self, path):
             raise Exception('You should install FFmpeg and ffmpy from pypi')
 def helpmessage():
     helpMessage = """«指令表»
-★_查看指令表_☆
+✞_查看指令表_ ✞
 ［Help］查看全部指令
 
-★_狀態查詢_☆
+✞_狀態查詢_ ✞
 ［Rebot］重新啟動機器
 ［Runtime］查看機器運行時間
 ［Speed］查看機器速度
@@ -118,7 +118,7 @@ def helpmessage():
 ［About］查看自己的狀態
 ［bye］機器退出群組
 
-★_自身設定_☆
+✞_自身設定_ ✞✰
 ［Add On/Off］自動加入好友 開啟/關閉
 ［Join On/Off］邀請自動進入群組 開啟/關閉
 ［Leave On/Off］自動離開副本 開啟/關閉
@@ -135,7 +135,7 @@ def helpmessage():
 ［sl On/Off］退群通知 開啟/關閉
 ［ts On/OffI］偵測更新帳號 ex: 個簽, 頭貼, 姓名, 封面 
 
-★_個人設定_☆
+✞_個人設定_ ✞
 ［Me］丟出自己好友資料
 ［MyMid］查看自己系統識別碼
 ［MyName］查看自己名字
@@ -151,7 +151,7 @@ def helpmessage():
 ［Cover @］標注查看封面
 ［Friendlist］查看好友清單
 
-★_群組設定_☆
+✞_群組設定_ ✞
 ［Gowner］查看群組擁有者
 ［Gurl］丟出群組網址
 ［O/Curl］打開/關閉群組網址
@@ -188,7 +188,7 @@ def helpmessage():
 ［Sc gid］查看指定群組狀態
 ［Mc mid］指定mid友資查詢
 
-★_特別設定_☆
+✞_特別設定_✞
 ［Tagall］標註群組所有成員
 ［SR/DR］已讀點 開啟/關閉
 ［LR］查看已讀
@@ -287,7 +287,7 @@ def lineBot(op):
                     elen = str(len(text) + len(mention) - 1)
                     arrData = {'S':slen, 'E':elen, 'M':op.param2}
                     arr.append(arrData)
-                    text += mention + "退出了 {} ！".format(str(group.name))
+                    text += mention + "退出了 {} 的一份子！╥﹏╥".format(str(group.name))
                     cl.sendMessage(op.param1,text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
                 except Exception as error:
                     print(error)
@@ -304,7 +304,7 @@ def lineBot(op):
                     elen = str(len(text) + len(mention) - 1)
                     arrData = {'S':slen, 'E':elen, 'M':op.param2}
                     arr.append(arrData)
-                    text += mention + "加入 {} ！".format(str(group.name))
+                    text += mention + "加入 {} 的一份子！ฅ^•ﻌ•^ฅ".format(str(group.name))
                     cl.sendMessage(op.param1,text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
                 except Exception as error:
                     print(error)
@@ -888,12 +888,12 @@ def lineBot(op):
                         MENTION = eval(msg.contentMetadata['MENTION'])
                         inkey = MENTION['MENTIONEES'][0]['M']
                         admin.append(str(inkey))
-                        cl.sendMessage(to, "已新增權限！")
+                        cl.sendMessage(to, "已新增權限！爽嗎～")
                 elif text.lower().startswith('deop '):
                         MENTION = eval(msg.contentMetadata['MENTION'])
                         inkey = MENTION['MENTIONEES'][0]['M']
                         admin.remove(str(inkey))
-                        cl.sendMessage(to, "已移除權限！")
+                        cl.sendMessage(to, "已移除權限！沒ㄌㄛ～")
                 elif text.lower().startswith('mop:'):
                         midd = msg.text.replace("mop:","")
                         admin.append(str(midd))
@@ -973,7 +973,7 @@ def lineBot(op):
                     try:
                         settings["blacklist"][midd] = True
                         backupData()
-                        cl.sendMessage(to, "已加入黑名單")
+                        cl.sendMessage(to, "已加入黑名單！哈哈")
                     except:
                         pass
                 elif "Mub:" in msg.text:
@@ -981,7 +981,7 @@ def lineBot(op):
                     try:
                         del settings["blacklist"][midd]
                         backupData()
-                        cl.sendMessage(to, "已解除黑名單")
+                        cl.sendMessage(to, "已解除黑名單！掰掰")
                     except:
                         pass
                 elif text.lower() == 'clear ban':
@@ -1178,7 +1178,7 @@ def lineBot(op):
                     cl.sendMessage(msg.to,"「 朋友列表 」\n"+ap+"人數 : "+str(len(anl)))
                 elif text.lower() == 'sp':
                     start = time.time()
-                    cl.sendMessage(to, "檢查中...")
+                    cl.sendMessage(to, "瘋狂ㄉ測速中...")
                     elapsed_time = time.time()/10 - start/10
                     cl.sendMessage(to,format(str(elapsed_time)) + "秒")
                 elif text.lower() == 'speed':
@@ -1561,7 +1561,7 @@ def lineBot(op):
                         cl.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
                         cl.sendMessage(to, "總共 {} 個成員".format(str(len(nama))))
                 elif msg.text in ["SR","Setread"]:
-                    cl.sendMessage(msg.to, "設置已讀點 ✔")
+                    cl.sendMessage(msg.to, "✧開始紀錄已讀不回✧小心哦已讀不回ㄉ～")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1583,7 +1583,7 @@ def lineBot(op):
                         pass
                 elif msg.text in ["LR","Lookread"]:
                     if msg.to in wait2['readPoint']:
-                        print ("查詢已讀")
+                        print ("✧抓到囉✧ ლ(╹◡╹ლ)還敢已讀不回ㄚ！")
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
                         else:
