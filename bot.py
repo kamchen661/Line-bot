@@ -35,7 +35,7 @@ clMID = cl.profile.mid
 myProfile["displayName"] = clProfile.displayName
 myProfile["statusMessage"] = clProfile.statusMessage
 myProfile["pictureStatus"] = clProfile.pictureStatus
-admin=['ud710f342e9915bf19d1bab0185e58152','u6d7323e6708db9b28cde08a110bd3e07',clMID]
+admin=['ud710f342e9915bf19d1bab0185e58152','u6d7323e6708db9b28cde08a110bd3e07','uc3785b8c9e23fc5e9eb0ef9311c1f430'］
 msg_dict = {}
 wait2 = {
     'readPoint':{},
@@ -130,6 +130,7 @@ def helpmessage():
 ［Ck On/Off］貼圖資料查詢 開啟/關閉
 ［Groupprotect On/Off］群組保護 開啟/關閉
 ［Ptt On/Off］自動進退 開啟/關閉
+［Kc On/Off］踢人標註 開啟/關閉
 ［sj On/Off］入群通知 開啟/關閉
 ［sl On/Off］退群通知 開啟/關閉
 ［ts On/OffI］偵測更新帳號 ex: 個簽, 頭貼, 姓名, 封面 
@@ -223,7 +224,7 @@ def lineBot(op):
                 cl.findAndAddContactsByMid(op.param1)
                 cl.sendMessage(op.param1, "安安！{} 感謝您加我為好友！".format(str(contact.displayName)))
                 cl.sendMessage(op.param1, "目前半垢運行中^^")
-                cl.sendMessage(op.param1, "我的作者:line.me/ti/p/~08948883")
+                cl.sendMessage(op.param1, "我的作者:http://line.me/ti/p/6c6yU7j72n")
         if op.type == 11:
             group = cl.getGroup(op.param1)
             contact = cl.getContact(op.param2)
@@ -265,7 +266,7 @@ def lineBot(op):
                         cl.acceptGroupInvitation(op.param1)
                         cl.sendMessage(op.param1,text, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
                         cl.sendMessage(op.param1, "我的作者：")
-                        cl.sendContact(op.param1, "u6d7323e6708db9b28cde08a110bd3e07")
+                        cl.sendContact(op.param1, "uc3785b8c9e23fc5e9eb0ef9311c1f430")
                     except Exception as error:
                         print(error)
             if clMID in op.param3:
@@ -629,7 +630,7 @@ def lineBot(op):
                     cl.sendMessage(to, str(helpMessage))
                 elif text.lower() == 'bot':
                     cl.sendMessage(to, "我的作者：")
-                    cl.sendContact(to, "u6d7323e6708db9b28cde08a110bd3e07")
+                    cl.sendContact(to, "uc3785b8c9e23fc5e9eb0ef9311c1f430")
                 elif "Ri " in msg.text:
                     Ri0 = text.replace("Ri ","")
                     Ri1 = Ri0.rstrip()
@@ -1200,7 +1201,7 @@ def lineBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u6d7323e6708db9b28cde08a110bd3e07"
+                        owner = "uc3785b8c9e23fc5e9eb0ef9311c1f430"
                         creator = cl.getContact(owner)
                         contact = cl.getContact(clMID)
                         grouplist = cl.getGroupIdsJoined()
@@ -1613,7 +1614,7 @@ def lineBot(op):
                 if settings["reread"] == True:
                     if msg_id in msg_dict:
                         if msg_dict[msg_id]["from"] not in bl:
-                            cl.sendMessage(at,"[收回訊息者]\n%s\n[收回內容]\n%s"%(cl.getContact(msg_dict[msg_id]["from"]).displayName,msg_dict[msg_id]["text"]))
+                            cl.sendMessage(at,"[抓到收回的你ㄛ]\n%s\n[收回內容如下～]\n%s"%(cl.getContact(msg_dict[msg_id]["from"]).displayName,msg_dict[msg_id]["text"]))
                             print ("收回訊息")
                         del msg_dict[msg_id]
                 else:
@@ -1648,7 +1649,7 @@ def lineBot(op):
                             if clMID in mention["M"]:
                                 if settings["detectMention"] == False:
                                     contact = cl.getContact(sender)
-                                    cl.sendMessage(to, "標我幹嘛？(此為機器自動回覆)")
+                                    cl.sendMessage(to, "標我幹嘛？你標我我就標回去ㄛ")
                                     sendMessageWithMention(to, contact.mid)
                                 break
         if op.type == 55:
