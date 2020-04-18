@@ -13,7 +13,7 @@ cl = LINE("")
 cl.log("Auth Token : " + str(cl.authToken))
 profile = cl.getProfile()
 status = str(profile.statusMessage)
-lock = _name = "隨心  ŁÏŃĚ ßöᴛ運行中...\n\n隨心BOT\n\n✔已運行24høüř\n\n✔ʙᴏᴛ ʀᴜɴɴɪɴɢᴀ ....\n\n作者:隨心 Made in HongKong可以嗎\n我的作者:line.me/ti/p/~08948883\n\n✔Line ID:08948883 \n\n"
+lock = _name = ""
 if lock not in status:
     profile.statusMessage = lock + status
     cl.updateProfile(profile)
