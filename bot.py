@@ -1590,7 +1590,7 @@ def lineBot(op):
                             chiya = ""
                             for rom in wait2["ROM"][msg.to].items():
                                 chiya += rom[1] + "\n"
-                        cl.sendMessage(msg.to, "[已讀順序]:%s\n\n[已讀的人]:\n%s\n查詢時間:[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendMessage(msg.to, "✧抓到囉✧ ლ(╹◡╹ლ)還敢已讀不回ㄚ！\n[已讀順序]:%s\n\n[已讀的人]:\n%s\n查詢時間:[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
                         cl.sendMessage(msg.to, "請輸入SR設置已讀點")
         if op.type == 26:
