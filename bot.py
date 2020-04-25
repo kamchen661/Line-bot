@@ -35,7 +35,7 @@ clMID = cl.profile.mid
 myProfile["displayName"] = clProfile.displayName
 myProfile["statusMessage"] = clProfile.statusMessage
 myProfile["pictureStatus"] = clProfile.pictureStatus
-admin=['ud710f342e9915bf19d1bab0185e58152','u6d7323e6708db9b28cde08a110bd3e07',clMID]
+admin=['udf2ef25a8e25c1f5a8ba4a3b092c3e1e','uc3785b8c9e23fc5e9eb0ef9311c1f430',clMID]
 msg_dict = {}
 wait2 = {
     'readPoint':{},
@@ -1213,7 +1213,7 @@ def lineBot(op):
                         ret_ += "\n好友 : {}".format(str(len(contactlist)))
                         ret_ += "\n封鎖 : {}".format(str(len(blockedlist)))
                         ret_ += "\n《關於機器》"
-                        ret_ += "\n版本 : 妍羅王bot V1.0"
+                        ret_ += "\n版本 :-------0.0"
                         ret_ += "\n作者 : {}".format(creator.displayName)
                         cl.sendMessage(to, str(ret_))
                     except Exception as e:
